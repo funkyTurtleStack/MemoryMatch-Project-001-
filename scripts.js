@@ -3,7 +3,7 @@ let gameOver = false;
 let tileOptions = ["garmond", "grindle", "hornet", "lace", "nuu", "phantom", "shakra", "sherma", "trobbio"];
 let buttonReferences = [];
 let tileIdentities = [];
-let tileCompleteness = [];
+let tileState = []; //will say whether the tiles are "matched", "flipped", or "faceDown"
 let tilesFlipped = [];
 let gameBoard, rows, tileFlipCount
 
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function()
 )
 
 //resets the game board with random tile locations (2 of each type)
-//sets the values of buttonReferences, tileIdentities, and tileCompleteness
+//sets the values of buttonReferences, tileIdentities, and tileState
 function gameShuffler()
 {
     //setting buttonReferences
@@ -43,9 +43,9 @@ function gameShuffler()
     tileIdentities = selectedImages.sort(() => Math.random() - 0.5);
     console.log('tileIdentities are now: ', tileIdentities);
 
-    //setting tileCompleteness
-    tileCompleteness = new Array(buttonReferences.length).fill("incomplete");
-    console.log('tileCompleteness is now: ', tileCompleteness);
+    //setting tileState
+    tileState = new Array(buttonReferences.length).fill("faceDown");
+    console.log('tileState is now: ', tileState);
 
     //ensure that all tiles are backside up and tileFlipCount is 0
     buttonReferences.forEach(button => {
@@ -56,13 +56,36 @@ function gameShuffler()
     console.log('All tiles set to back side and tileFlipCount is 0');
 }
 
-//checks for matches and win states, then updates any relavent info.
-function gameChecker()
+//check for matches and update tileState
+//assumes two tiles are flipped
+function matchChecker()
 {
+    let firstTile, secondTile
 
+    for(let i = 0; i < tileState.length; i++)
+    {
+        if(tileStates[i] == "flipped")
+        {
+            if(!firstTile)
+            {
+                firstTile = buttonReferences[i];
+            }
+            else if(!secondTile)
+            {
+                secondTile = buttonReferences[i];
+                //////////////////////////////////
+                // this is where we check if it's a match or not
+            }
+            else
+            {
+                console.log("There was an error with matchChecker");
+            }
+        }
+    }
 }
 
-function matchChecker()
+//checks for a win state
+function checkWinState()
 {
 
 }
@@ -84,6 +107,7 @@ function tileClickHandler(tile)
     if(tileFlipCount > 0)
     {
         matchChecker();
+        checkWinState();
     }
     else
     {
