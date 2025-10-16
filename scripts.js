@@ -5,7 +5,7 @@ let buttonReferences = [];
 let tileIdentities = [];
 let tileState = []; //will say whether the tiles are "matched", "flipped", or "faceDown"
 let tilesFlipped = [];
-let gameBoard, rows, tileFlipCount
+let gameBoard, rows, tileFlipCount;
 
 document.addEventListener('DOMContentLoaded', function()
     {
@@ -60,21 +60,33 @@ function gameShuffler()
 //assumes two tiles are flipped
 function matchChecker()
 {
-    let firstTile, secondTile
+    let firstTile, secondTile;
 
     for(let i = 0; i < tileState.length; i++)
     {
-        if(tileStates[i] == "flipped")
+        if(tileState[i] == "flipped")
         {
             if(!firstTile)
             {
-                firstTile = buttonReferences[i];
+                firstTile = i;
             }
             else if(!secondTile)
             {
-                secondTile = buttonReferences[i];
+                secondTile = i;
                 //////////////////////////////////
                 // this is where we check if it's a match or not
+                if(tileIdentities[firstTile] == tileIdentities[secondTile])
+                {
+                    tileState[firstTile] = 'matched';
+                    tileState[secondTile] = 'matched';
+                    console.log('Tiles ', buttonReferences[firstTile].id, ' and ', buttonReferences[secondTile].id, ' are marked as matched');
+                }
+                else
+                {
+                    tileState[firstTile] = 'faceDown';
+                    tileState[secondTile] = 'faceDown';
+                    console.log('Tiles ', buttonReferences[firstTile].id, ' and ', buttonReferences[secondTile].id, ' are not a match, and marked as faceDown');
+                }
             }
             else
             {
@@ -101,16 +113,25 @@ function tileClickHandler(tile)
     //flip the tile
     tile.className = 'tile';
     tile.classList.add(tileIdentities[targetIndex]);
+
+    //set tileState as flipped
+    tileState[targetIndex] = 'flipped'
+    console.log("tile states are now: ", tileState)
     console.log('the tile ', tile.id, ' now has the classList values(', tile.classList.value, ')');
 
     //check how many tiles are flipped and if another is already flipped, then check match
     if(tileFlipCount > 0)
     {
+        console.log('second tile flipped');
         matchChecker();
         checkWinState();
+
+        tileFlipCount = 0;
     }
     else
     {
+        console.log('first tile flipped');
         tileFlipCount ++;
     }
+    console.log("tile states are now: ", tileState);
 }
