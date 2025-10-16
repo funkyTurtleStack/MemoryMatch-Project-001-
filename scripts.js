@@ -65,6 +65,8 @@ function gameShuffler()
     //reset guesses and incorrectGuesses
     guesses.textContent = 0;
     incorrectGuesses.textContent = 0;
+
+    console.log('game has been reset');
 }
 
 //check for matches and update tileState
