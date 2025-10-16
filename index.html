@@ -44,11 +44,22 @@
                     <button class="tile silksong" id="b16"></button>
                 </div>
             </div>
-
-            <h2>Guesses: 0</h2>
-            <h2>Incorrect Guesses: 0</h2>
+            <div>
+                <div class="score-row">
+                    <span class="label-wrapper">
+                        <span class="label">Guesses:</span>
+                        <span class="value" id="guesses">0</span>
+                    </span>
+                </div>
+                <div class="score-row">
+                    <span class="label-wrapper">
+                        <span class="label">Incorrect Guesses:</span>
+                        <span class="value" id="incorrectGuesses">0</span>
+                    </span>
+                </div>
+            </div>
             <div class="d-flex justify-content-center">
-                <a href="#" class="btn btn-primary">
+                <a href="#" class="btn btn-primary" id="newGameButton">
                     <i data-lucide="joystick"></i>
                     New Game
                 </a>
