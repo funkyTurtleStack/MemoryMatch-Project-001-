@@ -44,7 +44,6 @@ h2
     align-items: center;
     gap: 15px;
     padding: 15px;
-    padding-bottom: 30px;
 }
 
 .myRow
@@ -71,70 +70,69 @@ h2
     justify-content: center;
     align-items: center;
     background-color: black;
-    animation: pop 0.1s ease-in-out;
 }
 
 .tile.hornet
 {
     background-image: url("images/Hornet.jpg");
     background-size: contain;
-    animation: pop 0.1s ease-in-out;
+    animation: flip 0.25s ease-in-out forwards;
 }
 
 .tile.garmond
 {
     background-image: url("images/Garmond_&_Zaza.jpg");
     background-size: contain;
-    animation: pop 0.1s ease-in-out;
+    animation: flip 0.25s ease-in-out forwards;
 }
 
 .tile.grindle
 {
     background-image: url("images/Grindle.jpg");
     background-size: contain;
-    animation: pop 0.1s ease-in-out;
+    animation: flip 0.25s ease-in-out forwards;
 }
 
 .tile.lace
 {
     background-image: url("images/Lace.jpg");
     background-size: contain;
-    animation: pop 0.1s ease-in-out;
+    animation: flip 0.25s ease-in-out forwards;
 }
 
 .tile.nuu
 {
     background-image: url("images/Nuu.jpg");
     background-size: contain;
-    animation: pop 0.1s ease-in-out;
+    animation: flip 0.25s ease-in-out forwards;
 }
 
 .tile.phantom
 {
     background-image: url("images/Phantom.jpg");
     background-size: contain;
-    animation: pop 0.1s ease-in-out;
+    animation: flip 0.25s ease-in-out forwards;
 }
 
 .tile.shakra
 {
     background-image: url("images/Shakra.jpg");
     background-size: contain;
-    animation: pop 0.1s ease-in-out;
+    animation: flip 0.25s ease-in-out forwards;
 }
 
 .tile.sherma
 {
     background-image: url("images/Sherma.jpg");
     background-size: contain;
-    animation: pop 0.1s ease-in-out;
+    animation: flip 0.25s ease-in-out forwards;
 }
 
 .tile.trobbio
 {
     background-image: url("images/Trobbio.jpg");
     background-size: contain;
-    animation: pop 0.1s ease-in-out;
+    animation: flip 0.25s ease-in-out forwards;
 }
 
 .tile.silksong
@@ -143,7 +141,7 @@ h2
     background-repeat: no-repeat;
     background-position: center;
     background-size: 80%;
-    animation: pop 0.1s ease-in-out;
+    animation: flip2 0.25s ease-in-out forwards;
 }
 
 .tile.matched
@@ -154,7 +152,7 @@ h2
 .score-row
 {
     text-align: center;
-    padding: 10px 0;
+    padding: 5px;
 }
 
 .label-wrapper
@@ -169,4 +167,36 @@ h2
     position: absolute;
     left: 100%;
     padding-left: 5px;
+}
+
+@keyframes flip
+{
+  0%
+  {
+    transform: scale(1) rotateY(0deg);
+  }
+  50%
+  {
+    transform: scale(1.1) rotateY(90deg);
+  }
+  100%
+  {
+    transform: scale(1) rotateY(180deg);
+  }
+}
+
+@keyframes flip2
+{
+  0%
+  {
+    transform: scale(1) rotateY(180deg);
+  }
+  50%
+  {
+    transform: scale(1.1) rotateY(90deg);
+  }
+  100%
+  {
+    transform: scale(1) rotateY(0deg);
+  }
 }
