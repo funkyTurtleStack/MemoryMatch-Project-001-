@@ -169,6 +169,33 @@ h2
     padding-left: 5px;
 }
 
+.icon-btn
+{
+  padding: 0;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+}
+
+.icon-circle
+{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid;
+  padding: 6px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  overflow: visible;
+}
+
 @keyframes flip
 {
   0%
