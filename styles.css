@@ -1,8 +1,13 @@
+html
+{
+    background-color: black;
+}
+
 body
 {
     font-family: Arial, sans-serif;
-    background-color: #ffffff;
-    color: #121212;
+    color: white;
+    background-color: black;
     display: flex;
     flex-wrap: wrap;
     overflow-y: auto;
@@ -24,7 +29,7 @@ header h1
     text-align: center;
     font-size: 2.5rem;
     font-weight: bold;
-    border-bottom: 1px solid #d3d6da;
+    border-bottom: 1px solid white;
     margin-bottom: 15px;
     padding-bottom: 15px;
 }
@@ -57,7 +62,7 @@ h2
 {
     width: 62px;
     height: 62px;
-    border: 3px solid black;
+    border: 2px solid white;
     border-radius: 15px;
 
     font-size: 2rem;
@@ -70,6 +75,21 @@ h2
     justify-content: center;
     align-items: center;
     background-color: black;
+}
+
+.btn
+{
+    background-color: black;
+    border-color: #6a21af;
+    color: #6a21af;
+    border-width: 2px;
+}
+
+.btn:hover
+{
+    background-color: #070707;
+    border-color: blueviolet;
+    color: blueviolet;
 }
 
 .tile.hornet
@@ -169,31 +189,29 @@ h2
     padding-left: 5px;
 }
 
-.icon-btn
-{
-  padding: 0;
-  line-height: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  background: none;
-}
-
 .icon-circle
 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  color: #6a21af;
 
   width: 40px;
   height: 40px;
   border-radius: 50%;
   border: 2px solid;
+  border-color: #6fc3df;
   padding: 6px;
   margin-right: 8px;
   margin-bottom: 8px;
   overflow: visible;
+}
+
+.icon-circle:hover
+{
+    background-color: #070707;
+    border-color: #95ddff;
+    color: blueviolet;
 }
 
 @keyframes flip
